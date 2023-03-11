@@ -26,11 +26,49 @@ public class Calculator
         logger  = LogManager.getLogger(Calculator.class);
     }
 
+    private static String inputDouble(Scanner sc)
+    {
+        int err = 0;
+        try
+        {
+            double ch = sc.nextDouble();
+            return ch+"";
+        }
+        catch (InputMismatchException error)
+        {
+            System.out.println(TEXT_RED+"Entered type is not a double");
+            sc.nextLine();
+            logger.info("[ERROR] Input Type Incorrect" );
+            err = 1;
+        }
+
+        return "no";
+    }
+
+    private static double inputInteger(Scanner sc)
+    {
+        int err = 0;
+        try
+        {
+            int ch = sc.nextInt();
+            return ch;
+        }
+        catch (InputMismatchException error)
+        {
+            System.out.println(TEXT_RED+"Entered type is not a integer");
+            sc.nextLine();
+            logger.info("[ERROR] Input Type Incorrect" );
+            err = 1;
+        }
+
+        return 0.5;
+    }
     public static void introLogo()
     {
 //        https://www.itsupportwale.com/blog/print-awesome-ascii-text-in-linux-terminal/
 //        https://www.w3schools.blog/java-console-and-terminal-color
 //        https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797
+//        https://www.youtube.com/watch?v=tI6Z2hy3B64&ab_channel=TutorialMentor
         System.out.println("\u001B[1m"); // bold starts
         System.out.println(TEXT_GREEN+"____ ___  ____    _  _ _ _  _ _    ___  ____ ____  _ ____ ____ ___");
         System.out.println("[__  |__] |___    |\\/| | |\\ | |    |__] |__/ |  |  | |___ |     |");
@@ -43,9 +81,28 @@ public class Calculator
 
     }
 
-
-    public static double squareRoot(double num1)
+    private static void menu()
     {
+        System.out.println("\n\n\n\n");
+        // Printing menu of the operations
+        System.out.println(TEXT_BLUE+"Below is the menu of options, please select the appropriate options:");
+        System.out.println("Enter 1 for Square root");
+        System.out.println("Enter 2 for Factorial");
+        System.out.println("Enter 3 for Natural logarithm (base е)");
+        System.out.println("Enter 4 for Power of a number");
+        System.out.println("Enter any other integer to exit");
+        System.out.print("Enter your choice : " + TEXT_YELLOW);
+    }
+
+    private static double squareRoot(double num1)
+    {
+        if(num1 < 0)
+        {
+            logger.info("[SQUARE ROOT] " + num1);
+            logger.info("[RESULT SQUARE ROOT] Invalid Input");
+            return  -1;
+        }
+
         double result = Math.sqrt(num1);
 
         logger.info("[SQUARE ROOT] " + num1);
@@ -54,6 +111,28 @@ public class Calculator
         return result;
     }
 
+    private static double factorial(double num1)
+    {
+        if(num1 < 0)
+        {
+            logger.info("[FACTORIAL] " + num1);
+            logger.info("[RESULT FACTORIAL] Invalid Input");
+            return  -1;
+        }
+        else
+        {
+            int result = 1;
+            for(int i=1;i<=num1;i++)
+            {
+                result *= i;
+            }
+
+            logger.info("[FACTORIAL] " + num1);
+            logger.info("[RESULT FACTORIAL]" + result);
+
+            return result;
+        }
+    }
 
     public static void main(String[] args)
     {
@@ -64,42 +143,62 @@ public class Calculator
 
         do
         {
-            System.out.println("\n\n\n\n");
-            // Printing menu of the operations
-            System.out.println(TEXT_BLUE+"Below is the menu of options, please select the appropriate options:");
-            System.out.println("Enter 1 for Square root");
-            System.out.println("Enter 2 for Factorial");
-            System.out.println("Enter 3 for Natural logarithm (base е)");
-            System.out.println("Enter 4 for Power of a number");
-            System.out.println("Enter any other integer to exit");
-            System.out.print("Enter your choice : " + TEXT_YELLOW);
+            menu();
             int ch = 0;
 
-            int err = 0;
-            try
-            {
-                ch = sc.nextInt();
-            }
-            catch (InputMismatchException error)
-            {
-                System.out.println(TEXT_RED+"Entered type is not a number");
-                sc.nextLine();
-                logger.info("[ERROR] Input Type Incorrect" );
-                err = 1;
-            }
-
-            if(err == 1)
+            double choice = inputInteger(sc);
+            if((int)choice != choice)
             {
                 continue;
             }
+            else
+            {
+                ch = (int)choice;
+            }
 
+            double num1, num2, result;
+            String n1,n2;
             switch (ch)
             {
                 // Finding Square Root of a number
                 case 1:
                     System.out.print(TEXT_BLUE+"Enter the number : "+TEXT_YELLOW);
-                    double num1 = sc.nextDouble();
-                    System.out.println(TEXT_GREEN+"\n\nResult : " + squareRoot(num1)+"\n***********************************");
+                    n1 = inputDouble(sc);
+                    if(n1.equals("no"))
+                    {
+                        System.out.println(TEXT_RED + "Try Again...");
+                        break;
+                    }
+
+                    num1 = Double.parseDouble(n1);
+                    result = squareRoot(num1);
+
+                    if(result == -1)
+                    {
+                        System.out.println(TEXT_RED + "Input Invalid");
+                        break;
+                    }
+                    System.out.println(TEXT_GREEN+"\n\nResult : " + result +"\n***********************************");
+                    break;
+                case 2:
+                    System.out.print(TEXT_BLUE+"Enter the number : "+TEXT_YELLOW);
+                    n1 = inputDouble(sc);
+                    if(n1.equals("no"))
+                    {
+                        System.out.println(TEXT_RED + "Try Again...");
+                        break;
+                    }
+
+                    num1 = Double.parseDouble(n1);
+                    result = factorial(num1);
+
+                    if(result == -1)
+                    {
+                        System.out.println(TEXT_RED + "Input Invalid");
+                        break;
+                    }
+
+                    System.out.println(TEXT_GREEN+"\n\nResult : " + result +"\n***********************************");
                     break;
                 default:
                     System.out.println(TEXT_RED+"\n\nExiting The Scientific Calculator with DevOps");
@@ -109,4 +208,5 @@ public class Calculator
         }while (true);
 
     }
+
 }
