@@ -8,6 +8,8 @@
     <artifactId>calculator</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+<!--    https://logging.apache.org/log4j/2.x/maven-artifacts.html-->
+<!--    https://mvnrepository.com/artifact/junit/junit/4.13.2-->
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
