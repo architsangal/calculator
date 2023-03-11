@@ -21,7 +21,7 @@ public class Calculator
 
 
 
-    Calculator()
+    public Calculator()
     {
         logger  = LogManager.getLogger(Calculator.class);
     }
@@ -94,7 +94,7 @@ public class Calculator
         System.out.print("Enter your choice : " + TEXT_YELLOW);
     }
 
-    private static double squareRoot(double num1)
+    public static double squareRoot(double num1)
     {
         if(num1 < 0)
         {
@@ -111,7 +111,7 @@ public class Calculator
         return result;
     }
 
-    private static double factorial(double num1)
+    public static double factorial(double num1)
     {
         if(num1 < 0)
         {
@@ -134,7 +134,7 @@ public class Calculator
         }
     }
 
-    private static String natLog(double num1)
+    public static String natLog(double num1)
     {
         if(num1 < 0)
         {
@@ -153,7 +153,7 @@ public class Calculator
         }
     }
 
-    private static String custPower(double num1, double num2)
+    public static String custPower(double num1, double num2)
     {
         if(num1 == 0 && num2 == 0)
         {
