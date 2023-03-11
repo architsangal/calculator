@@ -153,6 +153,25 @@ public class Calculator
         }
     }
 
+    private static String custPower(double num1, double num2)
+    {
+        if(num1 == 0 && num2 == 0)
+        {
+            logger.info("[POWER] " + num1 + " " + num2);
+            logger.info("[RESULT POWER] Invalid Input");
+            return  "no";
+        }
+        else
+        {
+            double result = Math.pow(num1,num2);
+
+            logger.info("[POWER] " + num1 + " " + num2);
+            logger.info("[RESULT POWER]" + result);
+
+            return result+"";
+        }
+    }
+
     public static void main(String[] args)
     {
         introLogo();
@@ -241,7 +260,7 @@ public class Calculator
                     System.out.println(TEXT_GREEN+"\n\nResult : " + result +"\n***********************************");
                     break;
                 case 4:
-                    System.out.print(TEXT_BLUE+"Enter the number : "+TEXT_YELLOW);
+                    System.out.print(TEXT_BLUE+"Enter the base number : "+TEXT_YELLOW);
                     n1 = inputDouble(sc);
                     if(n1.equals("no"))
                     {
@@ -249,8 +268,17 @@ public class Calculator
                         break;
                     }
 
+                    System.out.print(TEXT_BLUE+"Enter the base number : "+TEXT_YELLOW);
+                    n2 = inputDouble(sc);
+                    if(n2.equals("no"))
+                    {
+                        System.out.println(TEXT_RED + "Try Again...");
+                        break;
+                    }
+
                     num1 = Double.parseDouble(n1);
-                    res = natLog(num1);
+                    num2 = Double.parseDouble(n2);
+                    res = custPower(num1,num2);
 
                     if(res.equals("no"))
                     {
@@ -269,6 +297,5 @@ public class Calculator
         }while (true);
 
     }
-
 
 }
