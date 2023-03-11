@@ -134,6 +134,25 @@ public class Calculator
         }
     }
 
+    private static String natLog(double num1)
+    {
+        if(num1 < 0)
+        {
+            logger.info("[NATURAL LOGARITHM] " + num1);
+            logger.info("[RESULT NATURAL LOGARITHM] Invalid Input");
+            return  "no";
+        }
+        else
+        {
+            double result = Math.log(num1);
+
+            logger.info("[NATURAL LOGARITHM] " + num1);
+            logger.info("[RESULT NATURAL LOGARITHM]" + result);
+
+            return result+"";
+        }
+    }
+
     public static void main(String[] args)
     {
         introLogo();
@@ -157,7 +176,7 @@ public class Calculator
             }
 
             double num1, num2, result;
-            String n1,n2;
+            String n1,n2,res;
             switch (ch)
             {
                 // Finding Square Root of a number
@@ -200,6 +219,48 @@ public class Calculator
 
                     System.out.println(TEXT_GREEN+"\n\nResult : " + result +"\n***********************************");
                     break;
+                case 3:
+                    System.out.print(TEXT_BLUE+"Enter the number : "+TEXT_YELLOW);
+                    n1 = inputDouble(sc);
+                    if(n1.equals("no"))
+                    {
+                        System.out.println(TEXT_RED + "Try Again...");
+                        break;
+                    }
+
+                    num1 = Double.parseDouble(n1);
+                    res = natLog(num1);
+
+                    if(res.equals("no"))
+                    {
+                        System.out.println(TEXT_RED + "Input Invalid");
+                        break;
+                    }
+
+                    result = Double.parseDouble(res);
+                    System.out.println(TEXT_GREEN+"\n\nResult : " + result +"\n***********************************");
+                    break;
+                case 4:
+                    System.out.print(TEXT_BLUE+"Enter the number : "+TEXT_YELLOW);
+                    n1 = inputDouble(sc);
+                    if(n1.equals("no"))
+                    {
+                        System.out.println(TEXT_RED + "Try Again...");
+                        break;
+                    }
+
+                    num1 = Double.parseDouble(n1);
+                    res = natLog(num1);
+
+                    if(res.equals("no"))
+                    {
+                        System.out.println(TEXT_RED + "Input Invalid");
+                        break;
+                    }
+
+                    result = Double.parseDouble(res);
+                    System.out.println(TEXT_GREEN+"\n\nResult : " + result +"\n***********************************");
+                    break;
                 default:
                     System.out.println(TEXT_RED+"\n\nExiting The Scientific Calculator with DevOps");
                     return;
@@ -208,5 +269,6 @@ public class Calculator
         }while (true);
 
     }
+
 
 }
