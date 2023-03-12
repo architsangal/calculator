@@ -92,7 +92,7 @@ pipeline
                 }
             }
         }
-        stage('Package Code')
+        stage('Containerization')
         {
             steps
             {
