@@ -21,7 +21,18 @@ pipeline
             {
                 dir("src/calculator/")
                 {
-                    withMaven(options: [junitPublisher(disabled: true)])
+                    withMaven(options: [
+                        openTasksPublisher(disabled: true), 
+                        dependenciesFingerprintPublisher(disabled: true), 
+                        artifactsPublisher(disabled: true), 
+                        junitPublisher(disabled: true), 
+                        jgivenPublisher(disabled: true), 
+                        invokerPublisher(disabled: true), 
+                        findbugsPublisher(disabled: true),
+                        concordionPublisher(disabled: true), 
+                        pipelineGraphPublisher(disabled: true)
+                        ]
+                    )
                     {
                         sh "mvn clean"
                         sh "mvn validate"
