@@ -111,15 +111,15 @@ pipeline
             }
         }
 
-        stage('Docker Image Build')
-        {
-            steps
-            {
-                script
-                {
-                    dockerImage = docker.build registry + ":latest"
-                }
-            }
-        }
+        // stage('Docker Image Build')
+        // {
+        //     steps
+        //     {
+        //         script
+        //         {
+        //             dockerImage = docker.build registry + ":latest"
+        //         }
+        //     }
+        // }
     }
 }
