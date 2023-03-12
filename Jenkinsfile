@@ -14,7 +14,7 @@ pipeline
         {
             steps
             {
-                mvn --version
+                sh "ls"
             }
         }
         stage('Test Code')
