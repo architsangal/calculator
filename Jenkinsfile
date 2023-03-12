@@ -14,8 +14,10 @@ pipeline
         {
             steps
             {
-                sh "cd src/calculator/"
-                sh "ls"
+                dir("src/calculator/")
+                {
+                    sh "ls"                    
+                }
             }
         }
         stage('Test Code')
