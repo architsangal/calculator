@@ -137,6 +137,13 @@ pipeline
         {
             steps
             {
+                sh "ansible deploy" 
+            }
+        }
+        stage('Cleaning Up')
+        {
+            steps
+            {
                 sh "docker rmi $registry:latest" 
             }
         }
