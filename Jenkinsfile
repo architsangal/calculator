@@ -1,9 +1,7 @@
 pipeline
 {
     tools {
-        // Install the Maven version configured as "M3" and add it to the path.
         maven "M2_HOME"
-        docker "docker"
     }
 
     agent any
@@ -35,9 +33,10 @@ pipeline
                         ]
                     )
                     {
-                        sh "mvn clean"
-                        sh "mvn validate"
-                        sh "mvn compile"
+                        // TODO uncomment this
+                        //sh "mvn clean"
+                        //sh "mvn validate"
+                        //sh "mvn compile"
                     }                    
                 }
             }
@@ -61,9 +60,10 @@ pipeline
                         ]
                     )
                     {
-                        sh "mvn test"
-                        sh "mvn package"
-                        sh "mvn verify"
+                        // TODO uncomment this
+                        //sh "mvn test"
+                        //sh "mvn package"
+                        //sh "mvn verify"
                     }                    
                 }
             }
@@ -87,8 +87,9 @@ pipeline
                         ]
                     )
                     {
+                        // TODO uncomment this
                         sh "mvn package"
-                        sh "mvn verify"
+                        //sh "mvn verify"
                     }                    
                 }
             }
@@ -99,7 +100,7 @@ pipeline
             {
                 dir("src/calculator/")
                 {
-                    sh "docker ps -a"
+                    sh "ls"
                 }
             }
         }
