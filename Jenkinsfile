@@ -16,7 +16,10 @@ pipeline
             {
                 dir("src/calculator/")
                 {
-                    sh "ls"                    
+                    withMaven
+                    {
+                        sh "mvn clean verify"
+                    }                    
                 }
             }
         }
