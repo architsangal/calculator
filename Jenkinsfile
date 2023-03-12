@@ -5,6 +5,12 @@ pipeline
     }
 
     agent any
+    environment
+    {
+        registry = "architsangal/speminiproject"
+        registryCredential = "dockerhub"
+        dockerImage = ""
+    }
     stages
     {
         stage('Clone Git')
@@ -101,6 +107,17 @@ pipeline
                 dir("src/calculator/")
                 {
                     sh "docker ps -a"
+                }
+            }
+        }
+
+        stage('Docker Image Build')
+        {
+            steps
+            {
+                script
+                {
+                    dockerImage = docker.build registry + ":latest"
                 }
             }
         }
