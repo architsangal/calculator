@@ -8,7 +8,7 @@ pipeline
             steps
             {
                 echo "git"
-                git clone https://github.com/architsangal/calculator.git
+                git branch: 'main', url: 'https://github.com/architsangal/calculator.git'
             }
         }
         stage('Build Code')
