@@ -117,7 +117,7 @@ pipeline
             {
                 script
                 {
-                    dockerImage = docker.Build registry + ":latest"
+                    dockerImage = docker.build registry + ":latest"
                 }
             }
         }
