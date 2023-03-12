@@ -27,6 +27,8 @@ pipeline
                         sh "mvn validate"
                         sh "mvn compile"
                         sh "mvn test"
+                        sh "mvn package"
+                        sh "mvn verify"
                     }                    
                 }
             }
