@@ -7,7 +7,8 @@ pipeline
         {
             steps
             {
-                git 'https://github.com/architsangal/calculator.git'
+                echo "git"
+                // git 'https://github.com/architsangal/calculator.git'
             }
         }
         stage('Build Code')
