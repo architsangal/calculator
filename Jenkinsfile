@@ -92,5 +92,15 @@ pipeline
                 }
             }
         }
+        stage('Package Code')
+        {
+            steps
+            {
+                dir("src/calculator/")
+                {
+                    sh "docker ps -a"
+                }
+            }
+        }
     }
 }
