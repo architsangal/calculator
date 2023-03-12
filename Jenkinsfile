@@ -14,6 +14,7 @@ pipeline
         {
             steps
             {
+                sh "cd src/calculator/"
                 sh "ls"
             }
         }
