@@ -3,18 +3,11 @@ pipeline
     agent any
     stages
     {
-        // stage('Clone Git')
-        // {
-        //     steps
-        //     {
-        //         git branch: 'main', url: 'https://github.com/architsangal/calculator.git'
-        //     }
-        // }
         stage('Clone Git')
         {
             steps
             {
-                git 'https://github.com/architsangal/calculator.git'
+                git branch: 'main', url: 'https://github.com/architsangal/calculator.git'
             }
         }
         stage('Build Code')
