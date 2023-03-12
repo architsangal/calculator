@@ -100,7 +100,7 @@ pipeline
             {
                 dir("src/calculator/")
                 {
-                    sh "ls"
+                    sh "docker ps -a"
                 }
             }
         }
