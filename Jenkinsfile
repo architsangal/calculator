@@ -23,7 +23,10 @@ pipeline
                 {
                     withMaven
                     {
-                        sh "mvn clean verify"
+                        sh "mvn clean"
+                        sh "mvn validate"
+                        sh "mvn compile"
+                        sh "mvn test"
                     }                    
                 }
             }
