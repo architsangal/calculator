@@ -14,14 +14,14 @@ pipeline
         {
             steps
             {
-                
+                echo "Build"
             }
         }
         stage('Test Code')
         {
             steps
             {
-                
+                echo "test"
             }
         }
     }
