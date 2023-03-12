@@ -110,7 +110,6 @@ pipeline
                 }
             }
         }
-
         stage('Docker Image Build')
         {
             steps
@@ -118,6 +117,19 @@ pipeline
                 script
                 {
                     dockerImage = docker.build registry + ":latest"
+                }
+            }
+        }
+        stage('DockerHub Image Push')
+        {
+            steps
+            {
+                script
+                {
+                    docker.withRegistry('', registryCredential)
+                    {
+                        dockerImage.push()
+                    }
                 }
             }
         }
