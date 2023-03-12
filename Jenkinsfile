@@ -14,7 +14,7 @@ pipeline
         {
             steps
             {
-                echo "Build"
+                mvn --version
             }
         }
         stage('Test Code')
