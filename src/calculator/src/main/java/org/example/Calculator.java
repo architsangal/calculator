@@ -174,6 +174,7 @@ public class Calculator
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
+        Calculator calc = new Calculator();
         sc.nextLine();
 
         introLogo();
