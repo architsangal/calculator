@@ -1,6 +1,6 @@
 ---
 - name: Pull Docker Image
-  host: all
+  hosts: all
   tasks:
     - name: Start Docker Service
       service:
