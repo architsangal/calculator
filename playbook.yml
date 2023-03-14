@@ -2,10 +2,6 @@
 - name: Pull Docker Image
   hosts: all
   tasks:
-    # - name: Start Docker Service
-    #   service:
-    #     name: docker
-    #     state: started
     - name: pull an image
       docker_image:
         name: architsangal/speminiproject:latest
