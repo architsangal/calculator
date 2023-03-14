@@ -100,16 +100,6 @@ pipeline
                 }
             }
         }
-        stage('Containerization')
-        {
-            steps
-            {
-                dir("src/calculator/")
-                {
-                    sh "docker ps -a"
-                }
-            }
-        }
         stage('Docker Image Build')
         {
             steps
@@ -143,12 +133,12 @@ pipeline
                 playbook: 'playbook.yml'
             }
         }
-        stage('Cleaning Up')
-        {
-            steps
-            {
-                sh "docker rmi $registry:latest" 
-            }
-        }
+        // stage('Cleaning Up')
+        // {
+        //     steps
+        //     {
+        //         sh "docker rmi $registry:latest" 
+        //     }
+        // }
     }
 }
