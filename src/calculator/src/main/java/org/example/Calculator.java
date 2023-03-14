@@ -90,6 +90,7 @@ public class Calculator
         System.out.println("Enter 2 for Factorial");
         System.out.println("Enter 3 for Natural logarithm (base е)");
         System.out.println("Enter 4 for Power of a number");
+        System.out.println("Enter any other integer to exit");
         System.out.print("Enter your choice : " + TEXT_YELLOW);
     }
 
@@ -294,7 +295,7 @@ public class Calculator
                     System.out.println(TEXT_GREEN+"\n\nResult : " + result +"\n***********************************");
                     break;
                 default:
-                    System.out.println(TEXT_RED+"\n\nThis is not a valid input try again......");
+                    System.out.println(TEXT_RED+"\n\nExiting The Scientific Calculator with DevOps....");
                     return;
 
             }
