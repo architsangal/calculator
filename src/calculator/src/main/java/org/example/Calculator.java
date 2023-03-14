@@ -195,7 +195,7 @@ public class Calculator
             }
             else
             {
-                ch = Integer.parseInt(choice);
+                ch = (int)Double.parseDouble(choice);
             }
 
             double num1, num2, result;
