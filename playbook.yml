@@ -8,7 +8,9 @@
     #     state: started
     - name: pull an image
       docker_image:
-        name: architsangal/speminiproject
+        name: architsangal/speminiproject:latest
         source: pull
+    - name: Freeing the port
+      shell: docker ps --filter publish="2023"
     - name: Running Docker Image Using a Container
       shell: docker run -p 2023:22 -it -d architsangal/speminiproject
