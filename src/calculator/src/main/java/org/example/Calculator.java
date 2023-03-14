@@ -38,31 +38,33 @@ public class Calculator
         {
             System.out.println(TEXT_RED+"Entered type is not a double");
             sc.nextLine();
-            logger.info("[ERROR] Input Type Incorrect" );
+            logger.info("[ERROR] Input_Type_Incorrect" );
             err = 1;
         }
 
         return "no";
     }
 
-    private static double inputInteger(Scanner sc)
-    {
-        int err = 0;
-        try
-        {
-            int ch = sc.nextInt();
-            return ch;
-        }
-        catch (InputMismatchException error)
-        {
-            System.out.println(TEXT_RED+"Entered type is not a integer");
-            sc.nextLine();
-            logger.info("[ERROR] Input Type Incorrect" );
-            err = 1;
-        }
+    // not useful now
+    // private static double inputInteger(Scanner sc)
+    // {
+    //     int err = 0;
+    //     try
+    //     {
+    //         int ch = sc.nextInt();
+    //         return ch;
+    //     }
+    //     catch (InputMismatchException error)
+    //     {
+    //         System.out.println(TEXT_RED+"Entered type is not a integer");
+    //         sc.nextLine();
+    //         logger.info("[ERROR] Input_Type_Incorrect" );
+    //         err = 1;
+    //     }
 
-        return 0.5;
-    }
+    //     return 0.5;
+    // }
+
     public static void introLogo()
     {
 //        https://www.itsupportwale.com/blog/print-awesome-ascii-text-in-linux-terminal/
@@ -98,15 +100,15 @@ public class Calculator
     {
         if(num1 < 0)
         {
-            logger.info("[SQUARE ROOT] " + num1);
-            logger.info("[RESULT SQUARE ROOT] Invalid Input");
+            logger.info("[SQUARE_ROOT] " + num1);
+            logger.info("[RESULT_SQUARE_ROOT] Invalid_Input");
             return  -1;
         }
 
         double result = Math.sqrt(num1);
 
-        logger.info("[SQUARE ROOT] " + num1);
-        logger.info("[RESULT SQUARE ROOT] " + result);
+        logger.info("[SQUARE_ROOT] " + num1);
+        logger.info("[RESULT_SQUARE_ROOT] " + result);
 
         return result;
     }
@@ -116,7 +118,7 @@ public class Calculator
         if(num1 < 0)
         {
             logger.info("[FACTORIAL] " + num1);
-            logger.info("[RESULT FACTORIAL] Invalid Input");
+            logger.info("[RESULT_FACTORIAL] Invalid_Input");
             return  -1;
         }
         else
@@ -128,7 +130,7 @@ public class Calculator
             }
 
             logger.info("[FACTORIAL] " + num1);
-            logger.info("[RESULT FACTORIAL]" + result);
+            logger.info("[RESULT_FACTORIAL]" + result);
 
             return result;
         }
@@ -138,16 +140,16 @@ public class Calculator
     {
         if(num1 < 0)
         {
-            logger.info("[NATURAL LOGARITHM] " + num1);
-            logger.info("[RESULT NATURAL LOGARITHM] Invalid Input");
+            logger.info("[NATURAL_LOGARITHM] " + num1);
+            logger.info("[RESULT_NATURAL_LOGARITHM] Invalid_Input");
             return  "no";
         }
         else
         {
             double result = Math.log(num1);
 
-            logger.info("[NATURAL LOGARITHM] " + num1);
-            logger.info("[RESULT NATURAL LOGARITHM]" + result);
+            logger.info("[NATURAL_LOGARITHM] " + num1);
+            logger.info("[RESULT_NATURAL_LOGARITHM]" + result);
 
             return result+"";
         }
@@ -158,7 +160,7 @@ public class Calculator
         if(num1 == 0 && num2 == 0)
         {
             logger.info("[POWER] " + num1 + " " + num2);
-            logger.info("[RESULT POWER] Invalid Input");
+            logger.info("[RESULT_POWER] Invalid_Input");
             return  "no";
         }
         else
@@ -166,7 +168,7 @@ public class Calculator
             double result = Math.pow(num1,num2);
 
             logger.info("[POWER] " + num1 + " " + num2);
-            logger.info("[RESULT POWER]" + result);
+            logger.info("[RESULT_POWER]" + result);
 
             return result+"";
         }
