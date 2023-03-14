@@ -7,7 +7,7 @@
         name: architsangal/speminiproject:latest
         source: pull
     - name: Freeing the common resources
-      shell: docker ps -q --filter publish="2023") | xargs docker stop | xargs docker rm
+      shell: docker ps -q --filter publish="2023" | xargs docker stop | xargs docker rm
       shell: docker ps -q --filter name="calculator" | xargs docker stop | xargs docker rm
     - name: Running Docker Image Using a Container
       shell: docker run -p 2023:22 --name calculator -it -d architsangal/speminiproject
