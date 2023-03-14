@@ -11,6 +11,6 @@
         name: architsangal/speminiproject:latest
         source: pull
     - name: Freeing the port
-      shell: docker ps --filter publish="2023"
+      shell: docker stop $(docker ps --filter publish="2023")
     - name: Running Docker Image Using a Container
       shell: docker run -p 2023:22 -it -d architsangal/speminiproject
