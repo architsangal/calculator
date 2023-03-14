@@ -183,14 +183,14 @@ public class Calculator
             menu();
             int ch = 0;
 
-            double choice = inputInteger(sc);
-            if((int)choice != choice)
+            String choice = inputDouble(sc);
+            if(choice.equals("no") && (int)Double.parseDouble(choice) != Double.parseDouble(choice))
             {
                 continue;
             }
             else
             {
-                ch = (int)choice;
+                ch = Integer.parseInt(choice);
             }
 
             double num1, num2, result;
