@@ -1,0 +1,1 @@
+%{TIMESTAMP_ISO8601:timestamp} \[%{WORD}\] INFO  org.example.Calculator - \[%{WORD:category}\] \[%{WORD:un}\] %{NUMBER} %{NUMBER}
