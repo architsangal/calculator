@@ -38,7 +38,7 @@ public class Calculator
         {
             System.out.println(TEXT_RED+"Entered type is not a double");
             sc.nextLine();
-            logger.info("[ERROR] Input_Type_Incorrect" );
+            logger.info("[ERROR] [Input_Type_Incorrect] -1 -1" );
             err = 1;
         }
 
