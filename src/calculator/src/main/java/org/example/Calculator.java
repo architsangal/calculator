@@ -185,7 +185,7 @@ public class Calculator
             int ch = 0;
 
             String choice = inputDouble(sc);
-            if(choice.equals("no") && (int)Double.parseDouble(choice) != Double.parseDouble(choice))
+            if(!choice.equals("no") && (int)Double.parseDouble(choice) != Double.parseDouble(choice))
             {
                 continue;
             }
