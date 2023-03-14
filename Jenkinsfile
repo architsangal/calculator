@@ -133,11 +133,14 @@ pipeline
                 }
             }
         }
-        stage('Cleaning Up')
+        stage('Ansible Deployment')
         {
             steps
             {
-                sh "ansible deploy" 
+                ansiblePlaybook colorized: true,
+                installation: 'Ansible',
+                inventory: 'inventory',
+                playbook: 'playbook.yml'
             }
         }
         stage('Cleaning Up')

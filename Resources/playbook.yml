@@ -1,0 +1,12 @@
+---
+- name: Pull Docker Image
+  host: all
+  tasks:
+    - name: Start Docker Service
+      service:
+        name: docker
+        state: started
+    - name: Pull Docker Image
+      shell: docker pull architsangal/speminiproject
+    - name: Running Docker Image Using a Container
+      shell: docker run -p 2023:22 -it -d architsangal/speminiproject
