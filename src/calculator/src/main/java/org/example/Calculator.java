@@ -100,15 +100,15 @@ public class Calculator
     {
         if(num1 < 0)
         {
-            logger.info("[SQUARE_ROOT] " + num1);
-            logger.info("[RESULT_SQUARE_ROOT] Invalid_Input");
+            logger.info("[SQUARE_ROOT] [FAILED] -1 " + num1);
+            logger.info("[RESULT_SQUARE_ROOT] [Invalid_Input] -1 -1");
             return  -1;
         }
 
         double result = Math.sqrt(num1);
 
-        logger.info("[SQUARE_ROOT] " + num1);
-        logger.info("[RESULT_SQUARE_ROOT] " + result);
+        logger.info("[SQUARE_ROOT] [SUCCESS] 0 " + num1);
+        logger.info("[RESULT_SQUARE_ROOT] [SUCCESS] 0 " + result);
 
         return result;
     }
@@ -117,8 +117,8 @@ public class Calculator
     {
         if(num1 < 0)
         {
-            logger.info("[FACTORIAL] " + num1);
-            logger.info("[RESULT_FACTORIAL] Invalid_Input");
+            logger.info("[FACTORIAL] [FAILED] -1 " + num1);
+            logger.info("[RESULT_FACTORIAL] [Invalid_Input] -1 -1");
             return  -1;
         }
         else
@@ -129,8 +129,8 @@ public class Calculator
                 result *= i;
             }
 
-            logger.info("[FACTORIAL] " + num1);
-            logger.info("[RESULT_FACTORIAL]" + result);
+            logger.info("[FACTORIAL] [SUCCESS] 0 " + num1);
+            logger.info("[RESULT_FACTORIAL] [SUCCESS] 0 " + result);
 
             return result;
         }
@@ -140,16 +140,16 @@ public class Calculator
     {
         if(num1 < 0)
         {
-            logger.info("[NATURAL_LOGARITHM] " + num1);
-            logger.info("[RESULT_NATURAL_LOGARITHM] Invalid_Input");
+            logger.info("[NATURAL_LOGARITHM] [FAILED] -1 " + num1);
+            logger.info("[RESULT_NATURAL_LOGARITHM] [Invalid_Input] -1 -1");
             return  "no";
         }
         else
         {
             double result = Math.log(num1);
 
-            logger.info("[NATURAL_LOGARITHM] " + num1);
-            logger.info("[RESULT_NATURAL_LOGARITHM]" + result);
+            logger.info("[NATURAL_LOGARITHM] [SUCCESS] 0 " + num1);
+            logger.info("[RESULT_NATURAL_LOGARITHM] [SUCCESS] 0 " + result);
 
             return result+"";
         }
@@ -159,16 +159,16 @@ public class Calculator
     {
         if(num1 == 0 && num2 == 0)
         {
-            logger.info("[POWER] " + num1 + " " + num2);
-            logger.info("[RESULT_POWER] Invalid_Input");
+            logger.info("[POWER] [FAILED] " + num1 + " " + num2);
+            logger.info("[RESULT_POWER] [Invalid_Input] -1 -1");
             return  "no";
         }
         else
         {
             double result = Math.pow(num1,num2);
 
-            logger.info("[POWER] " + num1 + " " + num2);
-            logger.info("[RESULT_POWER]" + result);
+            logger.info("[POWER] [SUCCESS] " + num1 + " " + num2);
+            logger.info("[RESULT_POWER] [SUCCESS] 0 " + result);
 
             return result+"";
         }
