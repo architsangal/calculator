@@ -1,2 +1,2 @@
-[servers]
-localhost
+[host_machine]
+localhost ansible_connection=local
