@@ -40,9 +40,9 @@ pipeline
                     )
                     {
                         // TODO uncomment this
-                        //sh "mvn clean"
+                        sh "mvn clean"
                         //sh "mvn validate"
-                        //sh "mvn compile"
+                        sh "mvn compile"
                     }                    
                 }
             }
@@ -67,7 +67,7 @@ pipeline
                     )
                     {
                         // TODO uncomment this
-                        //sh "mvn test"
+                        sh "mvn test"
                         //sh "mvn package"
                         //sh "mvn verify"
                     }                    
