@@ -194,4 +194,3 @@ docker cp calculator:/calculator.log /Users/<user>/<path>
 - Run the `grok` pattern on `kibana`.
 
 ![](./Screenshots/18.ELK.png)
-
