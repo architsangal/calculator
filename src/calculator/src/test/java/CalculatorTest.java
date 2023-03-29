@@ -19,6 +19,7 @@ public class CalculatorTest
     {
         assertEquals("Square Root Test 1", 2, calculator.squareRoot(4),DELTA);
         assertEquals("Square Root Test 2", 1.414, calculator.squareRoot(2),0.5);
+        assertEquals("Square Root Test 3", -1, calculator.squareRoot(-1),0.5);
     }
 
     @Test
