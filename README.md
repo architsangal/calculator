@@ -1,5 +1,6 @@
 # Calculator
 
+
 This is a Dev-Ops project. The aim of this project was to create a pipeline for continuous integration, continuous delivery and continuous deployment. The idea to demonstrate is that if there is a change that is made,in the code, when it is pushed to a remote version control system like GitHub, it gets tested, built, delivered and deployed using automation, without any human intervention.
 
 ## How to setup the components?
